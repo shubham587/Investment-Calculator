@@ -1,13 +1,13 @@
-const InputComponent = ({hFor, iFor, iType, iId,onCurrChange}) => {
+const InputComponent = ({hFor, iFor, iType, iId, val,onValChange}) => {
     const changeHandler = (event) => {
         let currValue = event.target.value
-        onCurrChange(currValue)
+        onValChange(currValue)
     }
 
     return(
         <>
             <label htmlFor={hFor}>{iFor} ($)</label>
-            <input type={iType} id={iId} onChange={changeHandler}/>
+            <input value={val} type={iType} id={iId} onChange={changeHandler}/>
         </>
     )
 }

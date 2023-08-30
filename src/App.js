@@ -10,9 +10,9 @@ function App() {
 
     const yearlyData = []; // per-year results
 
-    let currentSavings = +userInput["current-savings"]; // feel free to change the shape of this input object!
-    const yearlyContribution = +userInput["yearly-contribution"]; // as mentioned: feel free to change the shape...
-    const expectedReturn = +userInput["expected-return"] / 100;
+    let currentSavings = +userInput["currentSavings"]; // feel free to change the shape of this input object!
+    const yearlyContribution = +userInput["yearlyContribution"]; // as mentioned: feel free to change the shape...
+    const expectedReturn = +userInput["expectedReturn"] / 100;
     const duration = +userInput["duration"];
 
     // The below code calculates yearly results (total savings, interest etc)
@@ -34,7 +34,7 @@ function App() {
   return (
     <div>
       <HeaderComponent />
-      <FormComponent />
+      <FormComponent onDataSubmit={calculateHandler}/>
       <table className="result">
         <TheadComponent />
         <tbody>
