@@ -1,14 +1,16 @@
 // import styles from "./TrowComponent.module.css";
-const TrowComponent = ({year, saving, interestYear, interestTotal, capital}) => {
+const TrowComponent = (props) => {
+  console.log(props.item.yearlyInterest, "hello");
+
   return (
     <>
-      <tr>
-        <td>{year}</td>
-        <td>{saving}</td>
-        <td>{interestYear}</td>
-        <td>{interestTotal}</td>
-        <td>{capital}</td>
-      </tr>
+        <tr>
+          <td>{props.item.year}</td>
+          <td>{props.item.savingsEndOfYear}</td>
+          <td>{props.item.yearlyInterest}</td>
+          <td>{props.item.totalInterest}</td>
+          <td>{props.item.yearlyContribution}</td>
+        </tr>
     </>
   );
 };

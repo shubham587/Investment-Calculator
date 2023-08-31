@@ -12,13 +12,25 @@ const FormComponent = (props) => {
 
   const changeHandler = (value, valueType) => {
     if (valueType === "currVal") {
-      setUserInput.currentSavings = value;
+      setUserInput({
+        ...userInput,
+        currentSavings: value,
+      });
     } else if (valueType === "yearVal") {
-      setUserInput.yearlyContribution = value;
+      setUserInput({
+        ...userInput,
+        yearlyContribution: value,
+      });
     } else if (valueType === "intVal") {
-      setUserInput.expectedReturn = value;
+      setUserInput({
+        ...userInput,
+        expectedReturn: value,
+      });
     } else {
-      setUserInput.duration = value;
+      setUserInput({
+        ...userInput,
+        duration: value,
+      });
     }
   };
 
@@ -47,6 +59,7 @@ const FormComponent = (props) => {
               onValChange={(val) => changeHandler(val, "currVal")}
             />
           </p>
+          {/* {console.log(userInput, "userInput")} */}
           <p>
             <InputComponent
               hFor="yearly-contribution"
